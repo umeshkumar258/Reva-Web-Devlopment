@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Display Property</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: #f0f4f8;
+      padding: 40px;
+    }
+
+    .box {
+      display: inline-block;
+      padding: 30px 50px;
+      border: 2px solid #3498db;
+      background-color: #eaf6ff;
+      margin: 20px;
+      font-size: 20px;
+      color: #2c3e50;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    p {
+      border: 1px solid #2ecc71;
+      background-color: #e8fce8;
+      color: #2c3e50;
+      display:inline-block ;
+      font-size: 18px;
+      margin: 20px 0;
+      padding: 15px 20px;
+      border-radius: 5px;
+      /* display: none; */
+    }
+
+    span {
+      border: 2px solid #e74c3c;
+      background-color: #fff0f0;
+      color: #e74c3c;
+      display:  inline-block;
+      padding: 8px 12px;
+      font-size: 18px;
+      border-radius: 4px;
+      display: block;
+      /* visibility: hidden; */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    Hello world! Best practices of CSS
+  </div>
+
+  <p>
+    Yes, I am a block element.
+  </p>
+
+  <span>
+    Yes, I am an inline element.
+  </span>
+</body>
+
+</html>

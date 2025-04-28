@@ -1,0 +1,235 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Logo Image */
+.logo-img {
+  width: 10%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+nav .logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav .nav-links {
+  list-style: none;
+  display: flex;
+}
+
+nav .nav-links li {
+  margin-left: 20px;
+}
+
+nav .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+nav .nav-links a:hover {
+  color: #ff6347;
+}
+
+/* Split Screen */
+.split-screen {
+  display: flex;
+  height: 100vh;
+  padding-top: 70px; /* To avoid navbar overlap */
+}
+
+/* Left Section */
+.left-section {
+  width: 50%;
+  position: relative;
+  background-color: #eeeeee;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.left-section img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.5s ease;
+}
+
+.left-section h1 {
+  font-size: 36px;
+  margin-top: 20px;
+  color: #333;
+}
+
+.left-section .cta-button {
+  padding: 12px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.left-section .cta-button:hover {
+  background-color: #218838;
+}
+
+/* Study Details and Contact Info */
+.study-details, .contact-info {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.study-details ul, .contact-info p {
+  margin-top: 10px;
+}
+
+.study-details li, .contact-info p {
+  font-size: 16px;
+  color: #555;
+}
+
+.study-details h2, .contact-info h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Right Section */
+.right-section {
+  width: 50%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  text-align: center;
+}
+
+.right-section h1 {
+  font-size: 40px;
+  color: #333;
+}
+
+.right-section p {
+  font-size: 18px;
+  color: #555;
+  margin-top: 15px;
+}
+
+.right-section .cta-button {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.right-section .cta-button:hover {
+  background-color: #0056b3;
+}
+
+/* Hover Effects */
+.left-section:hover img {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .split-screen {
+    flex-direction: column;
+  }
+
+  .left-section, .right-section {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .left-section img {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  nav {
+    padding: 15px 20px;
+  }
+
+  nav .logo {
+    font-size: 20px;
+  }
+
+  nav .nav-links li {
+    margin-left: 15px;
+  }
+
+  nav .nav-links a {
+    font-size: 14px;
+  }
+
+  .right-section h1 {
+    font-size: 30px;
+  }
+
+  .right-section p {
+    font-size: 16px;
+  }
+
+  .right-section .cta-button {
+    font-size: 14px;
+  }
+
+  .study-details, .contact-info {
+    padding: 15px;
+  }
+
+  .study-details h2, .contact-info h2 {
+    font-size: 20px;
+  }
+
+  .study-details li, .contact-info p {
+    font-size: 14px;
+  }
+}

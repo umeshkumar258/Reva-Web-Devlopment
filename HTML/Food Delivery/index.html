@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: lightcoral;
+        }
+
+        header {
+            background-color: #ff6347;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        header ul li {
+            float: left;
+        }
+
+        header ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        header ul li a:hover {
+            background-color: #111;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        main img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        main p {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+
+        main label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        main input[type="text"],
+        main input[type="email"],
+        main input[type="tel"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9dILIagVJXvo4ci-s8ElJxUpRvgmf_vx8VA&s'); background-size: cover; height: 200px; width: 100%;">
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8mCsgLiWm5U6-QlP21epEcKXcRmyopBozWUOnVjCH-7unUJ3JyvVAG_IQUTkx7KwLVOw&usqp=CAU"
+            alt="Delicious food">
+        <p>Discover the best food & drinks in UI</p>
+
+        <label for="restaurant">Choose a restaurant:</label>
+        <input type="text" id="restaurant" name="restaurant" placeholder="Enter restaurant name">
+
+        <ul>
+            <li><a href="#">Drinks</a></li>
+            <li><a href="#">Pizza</a></li>
+            <li><a href="#">Burgers</a></li>
+            <li><a href="#">Sushi</a></li>
+            <li><a href="#">Pasta</a></li>
+            <li><a href="#">Salads</a></li>
+            <li><a href="#">Desserts</a></li>
+        </ul>
+
+        <label for="location">Enter your location:</label>
+        <input type="text" id="location" name="location" placeholder="Enter your location">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email">
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Food Delivery. All rights reserved.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>

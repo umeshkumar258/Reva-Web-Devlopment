@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSS Overflow Example</title>
+  <style>
+    .box {
+      height: 20vh;                /* 20% of the viewport height */
+      width: 30vw;                 /* 30% of the viewport width for better visibility */
+      border: 3px solid black;     /* Adds a visible border around the box */
+      white-space: nowrap;         /* Prevents the text from wrapping to the next line */
+      
+      overflow-x: auto;            /* Allows horizontal scrolling if content overflows */
+      overflow-y: hidden;          /* Hides vertical overflow */
+      
+      padding: 10px;               /* Adds some spacing inside the box */
+      background-color: #f0f0f0;   /* Light background for better readability */
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <h2>CSS Overflow Demo</h2>
+  <div class="box">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus facere id dignissimos dolores totam beatae repellat, veritatis perferendis enim, inventore mollitia quia eveniet, distinctio nesciunt excepturi debitis aliquid est expedita!
+  </div>
+</body>
+</html>

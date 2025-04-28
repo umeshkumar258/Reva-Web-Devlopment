@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS shadows and outlines</title>
+</head>
+<style>
+    .box {
+        border: 2px solid black;
+        padding: 34px;
+        margin: 20px;
+        box-shadow: 5px 5px 10px rgba(2, 20, 20, 5);
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 5);
+    }
+
+    .box1 {
+        /* border: 2px solid blue; */
+        padding: 20px;
+        margin: 15px;
+        box-shadow: 3px 3px 8px rgba(0, 0, 255, 0.5);
+        outline-color: rgb(17, 227, 227);
+        outline-width: 22px;
+    }
+</style>
+
+<body>
+    <div class="box">
+        I am a div with a shadow and outline
+    </div>
+    <div class="box1"> new div i am </div>
+</body>
+
+</html>

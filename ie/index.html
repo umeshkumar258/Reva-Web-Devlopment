@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real UAI - Personalized Quote Generator</title>
+    <style>
+        /* General page styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('appu1.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: rgb(226, 42, 42);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Styling for images */
+        img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Container for the main content */
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        label {
+            font-size: 18px;
+            color: #555;
+        }
+
+        input {
+            padding: 12px;
+            width: 100%;
+            margin: 15px 0;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        input:focus {
+            border-color: #3b9eff;
+            outline: none;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: #3b9eff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3574cc;
+        }
+
+        /* Styling for quote text */
+        #quote {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+            font-weight: bold;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        #quote.error {
+            color: #e74c3c;
+        }
+
+        /* Social media links section */
+        .social-media {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-media a {
+            margin: 0 15px;
+            color: rgb(180, 16, 16);
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        .social-media a:hover {
+            text-decoration: underline;
+        }
+
+        /* About section styling */
+        .about-section {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main content container -->
+    <div class="container">
+        <h1>Personalized Quote Generator</h1>
+        <label for="name">Enter Your Name:</label>
+        <input type="text" id="name" placeholder="Your name">
+        
+        <!-- Buttons for different quote categories -->
+        <button onclick="generateQuote()">Generate Quote</button>
+        <button onclick="generateCategoryQuote('happy')">Happy Quote</button>
+        <button onclick="generateCategoryQuote('sad')">Sad Quote</button>
+        <button onclick="generateCategoryQuote('love')">Love Quote</button>
+        <button onclick="generateCategoryQuote('breakup')">Breakup Quote</button>
+
+        <p id="quote"></p>
+    </div>
+
+    <!-- About Me Section -->
+    <div class="about-section">
+        <h2>About Me</h2>
+        <p>Hello! I'm a <strong>web developer</strong> passionate about creating <strong>interactive</strong> and <strong>dynamic web applications</strong>. Follow me on social media to stay updated with my latest projects.</p>
+    </div>
+
+    <!-- Social Media Links -->
+    <div class="social-media">
+        <h2>Follow Me</h2>
+        <a href="https://www.instagram.com/real_uai_" target="_blank">Instagram</a>
+        <a href="https://www.twitter.com/your_twitter_id" target="_blank">Twitter</a>
+        <a href="https://www.facebook.com/your_facebook_id" target="_blank">Facebook</a>
+    </div>
+
+    <!-- Include JavaScript -->
+    <script>
+        // Global quotes object to store categories and quotes
+        const quotes = {
+            happy: [
+                "Happiness is a journey, not a destination.",
+                "Smile and let the world wonder why.",
+                "Happiness looks gorgeous on you.",
+                "Choose to be happy every day.",
+                "Your happiness is your greatest strength."
+            ],
+            sad: [
+                "It's okay to feel sad sometimes.",
+                "Tears are words that need to be written.",
+                "Sadness flies away on the wings of time.",
+                "Every storm runs out of rain.",
+                "This too shall pass."
+            ],
+            love: [
+                "Love is the greatest refreshment in life.",
+                "You are loved more than you know.",
+                "Love yourself first and everything else falls into line.",
+                "Love is a friendship set to music.",
+                "Where there is love, there is life."
+            ],
+            breakup: [
+                "Sometimes good things fall apart so better things can fall together.",
+                "Every ending is a new beginning.",
+                "Let go of the past and embrace the future.",
+                "You deserve someone who makes you feel like the best version of yourself.",
+                "The best is yet to come."
+            ]
+        };
+
+        // Main function for generating a personalized quote
+        function generateQuote() {
+            const name = document.getElementById('name').value.trim();
+            const quoteElement = document.getElementById('quote');
+
+            // Clear previous error class
+            quoteElement.classList.remove("error");
+
+            if (name) {
+                const personalizedQuotes = [
+                    `Believe in yourself, ${name}. You are capable of achieving great things!`,
+                    `${name}, your potential is limitless. Keep pushing forward!`,
+                    `Stay positive and strong, ${name}. Good things are coming your way!`,
+                    `${name}, you have the power to create your own destiny. Make it amazing!`
+                ];
+                const randomIndex = Math.floor(Math.random() * personalizedQuotes.length);
+                quoteElement.textContent = personalizedQuotes[randomIndex];
+            } else {
+                quoteElement.textContent = 'Please enter your name to receive a personalized quote.';
+                quoteElement.classList.add("error");
+            }
+        }
+
+        // Function for generating category-based quotes (happy, sad, love, breakup)
+        function generateCategoryQuote(category) {
+            const name = document.getElementById('name').value.trim();
+            const quoteElement = document.getElementById('quote');
+
+            // Clear previous error class
+            quoteElement.classList.remove("error");
+
+            if (name === "") {
+                quoteElement.textContent = "Please enter your name to generate a quote!";
+                quoteElement.classList.add("error");
+                return;
+            }
+
+            // Get quotes for the selected category
+            const categoryQuotes = quotes[category] || [];
+
+            if (categoryQuotes.length > 0) {
+                const randomIndex = Math.floor(Math.random() * categoryQuotes.length);
+                quoteElement.textContent = `${name}, ${categoryQuotes[randomIndex]}`;
+            } else {
+                quoteElement.textContent = "Invalid category!";
+                quoteElement.classList.add("error");
+            }
+        }
+    </script>
+</body>
+</html>

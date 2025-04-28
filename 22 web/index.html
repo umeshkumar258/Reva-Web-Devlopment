@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Sizing Units</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* px - Pixels */
+        .px-example {
+            width: 200px;
+            height: 200px;
+            background-color: #3498db;
+            color: rgb(65, 54, 54);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* rem - Relative to the root font-size (default is 16px) */
+        .rem-example {
+            font-size: 2rem; /* 2 * 16px = 32px */
+            padding: 1rem;  /* 1 * 16px = 16px */
+            background-color: #2ecc71;
+            color: white;
+            display: inline-block;
+            border: 5px solid black;
+        }
+
+        /* em - Relative to the font-size of the parent element */
+        .em-example {
+            font-size: 1.5em; /* 1.5 times the font-size of the parent (depends on context) */
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px;
+        }
+
+        /* % - Percentage, relative to the parent element */
+        .percent-example {
+            width: 50%; /* 50% of the parent element's width */
+            background-color: #f39c12;
+            color: white;
+            padding: 10px;
+            margin: auto;
+        }
+
+        /* vw - Viewport width, relative to the width of the viewport */
+        .vw-example {
+            width: 50vw; /* 20% of the viewport width */
+            height: 50px;
+            background-color: #9b59b6;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* vh - Viewport height, relative to the height of the viewport */
+        .vh-example {
+            height: 20vh; /* 20% of the viewport height */
+            background-color: #1abc9c;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* vw and vh combined to create responsive boxes */
+        .responsive-box {
+            width: 30vw;
+            height: 30vh;
+            background-color: #f1c40f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2em;
+        }
+
+        /* vh and rem combination to demonstrate interaction */
+        .combined-example {
+            width: 10rem;
+            height: 10vh;
+            background-color: #34495e;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+        }
+
+        /* Responsive design using percentage and media query */
+        @media (max-width: 600px) {
+            .responsive-box {
+                width: 80vw;
+                height: 40vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="px-example">200px</div>
+
+    <div class="rem-example">2rem</div>
+
+    <div class="em-example">
+        <div style="font-size: 16px;">1.5em (Parent font-size is 16px)</div>
+    </div>
+
+    <div class="percent-example">50% Width The percent exapple klie o=llod bad</div>
+
+    <div class="vw-example">20vw</div>
+
+    <div class="vh-example">20vh hey avh is good but px is bveyr bes</div>
+
+    <div class="responsive-box">Responsive Box</div>
+
+    <div class="combined-example">Combined rem and vh</div>
+
+</body>
+</html>

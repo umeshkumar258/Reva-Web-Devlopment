@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Quote Generator</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
+    <style>
+        /* Styling for images */
+        img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Background styling for the body */
+        body {
+            background-image: url('appu1.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: rgb(226, 42, 42);
+            font-family: Arial, sans-serif;
+        }
+
+        /* Container for the main content */
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Social media links section */
+        .social-media {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-media a {
+            margin: 0 15px;
+            color: rgb(180, 16, 16);
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        .social-media a:hover {
+            text-decoration: underline;
+        }
+
+        /* Style for quote text */
+        #quote {
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #b80a0a;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Input field styling */
+        input {
+            padding: 10px;
+            font-size: 1em;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+</head>
+<body>
+    <!-- Images to display -->
+    <img src="appu.jpeg" alt="Appu">
+    <img src="appu1.jpeg" alt="Appu1">
+
+    <div class="container">
+        <h1>Personalized Quote Generator</h1>
+        <label for="name">Enter Your Name:</label>
+        <input type="text" id="name" placeholder="Your name">
+
+        <!-- Buttons for different quote categories -->
+        <button onclick="generateQuote()">Generate Quote</button>
+        <button onclick="generateCategoryQuote('happy')">Happy Quote</button>
+        <button onclick="generateCategoryQuote('sad')">Sad Quote</button>
+        <button onclick="generateCategoryQuote('love')">Love Quote</button>
+        <button onclick="generateCategoryQuote('breakup')">Breakup Quote</button>
+
+        <p id="quote"></p>
+    </div>
+    <div class="container">
+        <h2>About Me</h2>
+        <p>Hello! I'm a <strong>web developer</strong> passionate about creating <strong>interactive</strong> and <strong>dynamic web applications</strong>. Follow me on social media to stay updated with my latest projects.</p>
+    </div>
+    <div class="social-media">
+        <h2>Follow Me</h2>
+        <a href="https://www.instagram.com/real_uai_" target="_blank">Instagram</a>
+        <a href="https://www.twitter.com/your_twitter_id" target="_blank">Twitter</a>
+        <a href="https://www.facebook.com/your_facebook_id" target="_blank">Facebook</a>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to external JavaScript -->
+</body>
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Lists</title>
+  <style>
+    nav ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    nav ul li {
+      list-style-type: none;
+      background-color: yellow;
+      border: 2px solid black;
+      padding: 10px 15px;
+      width: 120px;
+      margin: 8px 0;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    nav ul li::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-image: url('https://i.pinimg.com/736x/b6/c2/3f/b6c23f2e987563f3211da87a71f2befa.jpg');
+      background-size: cover;
+    }
+
+    nav ul li:hover {
+      background-color: orange;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li>Home</li>
+      <li>About</li>
+      <li>New</li>
+      <li>Course</li>
+    </ul>
+  </nav>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom right, #1a1a2e, #16213e);
+        color: #fff;
+        overflow-x: hidden;
+    }
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: rgba(10, 10, 20, 0.9);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    }
+    header h1 {
+        font-size: 2rem;
+        color: #ff4c29;
+    }
+    nav ul {
+        list-style: none;
+        display: flex;
+    }
+    nav ul li {
+        margin: 0 15px;
+    }
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.1rem;
+    }
+    .hero {
+        text-align: center;
+        padding: 100px 20px;
+        background: url('https://example.com/gaming-room.jpg') no-repeat center center / cover;
+        color: #fff;
+    }
+    .hero h2 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+    .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+    }
+    .hero button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        color: #fff;
+        background-color: #ff4c29;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .hero button:hover {
+        background-color: #ff5722;
+    }
+    .games {
+        display: flex;
+        justify-content: space-around;
+        padding: 50px 20px;
+    }
+    .game-card {
+        width: 300px;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: rgba(20, 20, 30, 0.8);
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+    .game-card img {
+        width: 100%;
+        border-radius: 10px;
+    }
+    .game-card h3 {
+        margin-top: 15px;
+        color: #ff4c29;
+    }
+    .game-card button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background: #ff4c29;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    footer {
+        padding: 20px;
+        text-align: center;
+        background-color: rgba(10, 10, 20, 0.9);
+    }
+    footer p {
+        color: #aaa;
+    }
+</style>

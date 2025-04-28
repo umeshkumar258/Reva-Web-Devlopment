@@ -1,0 +1,45 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Paragraph styling */
+p {
+    font-size: 18px;
+    margin: 20px 0;
+    color: #555;
+}
+
+/* Anchor tag styling */
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* Div styling */
+div {
+    background-color: #e0e0e0;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Span styling */
+span {
+    color: #ff5722;
+    font-weight: bold;
+    font-style: italic;
+}

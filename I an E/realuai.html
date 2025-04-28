@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real UAI - Personalized Quote Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: rgb(177, 17, 17);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        header .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header .logo span {
+            margin-top: 5px;
+            font-size: 18px;
+            color: white;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section#home {
+            padding: 50px;
+            text-align: center;
+            background: url('https://i.ibb.co/tLrfhcC/BEHIND-MAIN-PAGE.png') no-repeat center center/cover;
+            color: white;
+        }
+
+        section#home h1 {
+            font-size: 48px;
+            opacity: 0.8;
+        }
+
+        section#home p {
+            font-size: 20px;
+        }
+
+        section#home .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        section#features,
+        section#pricing,
+        section#about,
+        section#contact {
+            padding: 50px 20px;
+            text-align: center;
+            background: url('https://i.ibb.co/YPdM4WV/backgorund-for-website.jpg') no-repeat center center/cover;
+        }
+
+        section#features h2,
+        section#pricing h2,
+        section#about h2,
+        section#contact h2,
+        section#pricing p:first-of-type {
+            color: white;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .feature-cards,
+        .pricing-cards,
+        .about-cards,
+        .contact-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .feature-card,
+        .pricing-card,
+        .about-card,
+        .contact-card {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            text-align: left;
+        }
+
+        .feature-card img,
+        .pricing-card img,
+        .about-card img,
+        .contact-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        section#pricing .pricing-card h3,
+        section#pricing .pricing-card p {
+            color: black;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        footer ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer ul li a.instagram {
+            color: #E1306C;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .feature-card,
+            .pricing-card,
+            .about-card,
+            .contact-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://i.ibb.co/SngnmBJ/Whats-App-Image-2024-12-22-at-9-46-58-PM-2.jpg" alt="Real UAI Logo">
+            <span>Real UAI</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Find the Perfect Words for Every Occasion</h1>
+        <p>Discover personalized quotes that resonate with your needs.</p>
+        <a href="index.html" class="btn">Get Started</a>
+    </section>
+
+    <section id="features">
+        <h2>Features</h2>
+        <div class="feature-cards">
+            <div class="feature-card">
+                <img src="https://i.ibb.co/XyxmhNZ/in-the-personalized.jpg" alt="Personalized Quotes">
+                <h3>Personalized Quotes</h3>
+                <p>Generate quotes tailored to your preferences and context.</p>
+            </div>
+            <div class="feature-card">
+                <img src="https://i.ibb.co/3B0GvZk/quick-and-easy.jpg" alt="Quick and Easy">
+                <h3>Quick and Easy</h3>
+                <p>Get your personalized quotes in just a few clicks.</p>
+            </div>
+            <div class="feature-card">
+                <img src="https://i.ibb.co/d48Y3Pv/share.jpg" alt="Share Quotes">
+                <h3>Share Instantly</h3>
+                <p>Save and share your favorite quotes easily.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <h2>Pricing</h2>
+        <p>Choose a plan that suits your needs and start generating personalized quotes today!</p>
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3>Free</h3>
+                <p>₹0/month</p>
+                <p>Basic features with limited personalization options.</p>
+            </div>
+            <div class="pricing-card">
+                <h3>Premium</h3>
+                <p>₹100/month</p>
+                <p>Access to all features and advanced personalization options.</p>
+            </div>
+            <div class="pricing-card">
+                <h3>Enterprise</h3>
+                <p>Contact us for pricing</p>
+                <p>Custom solutions for businesses and organizations.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="about-cards">
+            <div class="about-card">
+                <p>Real UAI is dedicated to helping you find the perfect words for every occasion. Our platform generates personalized quotes that resonate with your unique needs and contexts.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-cards">
+            <div class="contact-card">
+                <p>Have questions? Get in touch with us!</p>
+                <form>
+                    <input type="text" placeholder="Your Name" required><br>
+                    <input type="email" placeholder="Your Email" required><br>
+                    <textarea placeholder="Your Message" required></textarea><br>
+                    <button type="submit">Send Message</button>

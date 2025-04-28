@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Men's Wear Clothing Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav>
+      <div class="logo">Men's Wear</div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#payment">Payment</a></li>
+        <li><a href="#">Checkout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Men's Wear Store</h1>
+      <p>Explore our exclusive collection of men's clothing.</p>
+      <a href="#products" class="btn">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="products">
+    <h2>Our Best Collection</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="https://fastcolors.in/cdn/shop/files/FastColors_Printed_Typography_Men_Round_Neck_Navy_Blue_T-Shirt_-_FastColors-4952275.jpg?v=1729849626" alt="T-Shirt">
+        <h3>Stylish T-Shirt</h3>
+        <p>$29.99</p>
+        <a href="#payment" class="btn">View Product</a>
+      </div>
+      <div class="product">
+        <img src="https://pictures.kartmax.in/live/inside/800x800/sites/aPfvUDpPwMn1ZadNKhP7/product-images/8905980292709/660/PHJN000061_1.JPG" alt="Blue Jeans">
+        <h3>Blue Jeans</h3>
+        <p>$49.99</p>
+        <a href="#payment" class="btn">View Product</a>
+      </div>
+      <div class="product">
+        <img src="https://images.meesho.com/images/products/428518413/cycg3_512.webp" alt="Leather Jacket">
+        <h3>Leather Jacket</h3>
+        <p>$99.99</p>
+        <a href="#payment" class="btn">View Product</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Payment Section -->
+  <section id="payment" class="payment-container">
+    <h2>Payment Details</h2>
+    <form action="#" method="POST">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="John Doe" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="john@example.com" required />
+      </div>
+      <div class="form-group">
+        <label for="address">Shipping Address</label>
+        <textarea id="address" name="address" rows="3" placeholder="123 Street, City, State" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="+91 9876543210" required />
+      </div>
+
+      <!-- Payment Options -->
+      <div class="payment-methods">
+        <p><strong>Select Payment Method:</strong></p>
+        <label><input type="radio" name="payment" value="cod" required /> Cash on Delivery</label>
+        <label><input type="radio" name="payment" value="upi" /> UPI</label>
+        <div class="form-group" id="upi-id-group" style="display: none;">
+          <label for="upi-id">Enter UPI ID</label>
+          <input type="text" id="upi-id" name="upi-id" placeholder="example@upi" />
+        </div>
+        <label><input type="radio" name="payment" value="card" /> Credit/Debit Card (Coming Soon)</label>
+      </div>
+
+      <div class="form-group submit-btn">
+        <button type="submit" class="btn">Place Order</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Men's Wear Store</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

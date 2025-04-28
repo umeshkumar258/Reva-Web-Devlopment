@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selector</title>
+
+    <style>
+        /* universal selector */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* class selector */
+        .red {
+            background-color: blue;
+        }
+
+        /* id selector */
+        #green {
+            background-color: green;
+        }
+
+        /* child selector */
+        div > p {
+            color: blue;
+            background-color: brown;
+        }
+
+        /* descendant selector */
+        div p {
+            color: blue;
+            background-color: brown;
+            font-size: 16px;
+        }
+
+        /* pseudo selectors */
+        a:visited {
+            color: red;
+        }
+
+        a:active {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="red">
+        I am Umesh Kumar JB
+        <p>Hey, I am learning CSS</p>
+    </div>
+
+    <div id="green">
+        I am a new user
+        <section>
+            <p>I am learning CSS selectors</p>
+        </section>
+    </div>
+
+    <div>
+        <a href="https://www.google.com">Visit Google</a>
+    </div>
+</body>
+
+</html>

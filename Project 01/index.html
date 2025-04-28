@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="script.js"></script>
+    <header>
+        <div class="container">
+            <h1>Welcome to Food Delivery</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div>
+                <img src="food.jpeg" alt="Food Delivery" class="Logo">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="section">
+            <h2>Delicious Food Delivered to Your Doorstep</h2>
+            <p>Order now and enjoy fresh, tasty meals from the comfort of your home.</p>
+        </section>
+
+        <section id="menu" class="section">
+            <h2>Our Menu</h2>
+            <p>Explore a variety of dishes to satisfy your cravings.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dish</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Margherita Pizza</td>
+                        <td>Classic cheese and tomato pizza with fresh basil.</td>
+                        <td>$8.99</td>
+                    </tr>
+                    <tr>
+                        <td>Caesar Salad</td>
+                        <td>Crisp romaine lettuce with Caesar dressing and croutons.</td>
+                        <td>$6.99</td>
+                    </tr>
+                    <tr>
+                        <td>Grilled Chicken Sandwich</td>
+                        <td>Juicy grilled chicken with lettuce, tomato, and mayo.</td>
+                        <td>$7.99</td>
+                    </tr>
+                    <tr>
+                        <td>Chocolate Brownie</td>
+                        <td>Rich and fudgy chocolate brownie with a scoop of vanilla ice cream.</td>
+                        <td>$4.99</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="section">
+            <h2>Select Your Favorite Dish</h2>
+            <form action="/submit-order" method="post">
+                <label for="dish-select">Choose a dish:</label>
+                <select id="dish-select" name="dish">
+                    <option value="margherita-pizza">Margherita Pizza - $8.99</option>
+                    <option value="caesar-salad">Caesar Salad - $6.99</option>
+                    <option value="grilled-chicken-sandwich">Grilled Chicken Sandwich - $7.99</option>
+                    <option value="chocolate-brownie">Chocolate Brownie - $4.99</option>
+                </select>
+                <button type="submit" class="order-button">Order Now</button>
+            </form>
+
+            <h3>Select the mode of payment</h3>
+            <form action="mode-payment" method="post" id="payment-form">
+                <input type="radio" id="credit-card" name="payment-method" value="credit-card">
+                <label for="credit-card">Credit Card</label><br>
+                <input type="radio" id="debit-card" name="payment-method" value="debit-card">
+                <label for="debit-card">Debit Card</label><br>
+                <input type="radio" id="paypal" name="payment-method" value="paypal">
+                <label for="paypal">PayPal</label><br>
+                <input type="radio" id="cash-on-delivery" name="payment-method" value="cash-on-delivery">
+                <label for="cash-on-delivery">Cash on Delivery</label><br>
+                <button type="submit" class="payment-button">Submit Payment</button>
+            </form>
+        </section>
+
+        <section id="about" class="section">
+            <h2>About Us</h2>
+            <p>We are committed to delivering high-quality food with exceptional service.</p>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact Us</h2>
+            <p>Have questions? Reach out to us anytime!</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Food Delivery. All rights reserved.</p>
+            <nav>
+                <ul>
+                    <li><a href="https://www.instagram.com/umeshkumarjb" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/umeshkumarjb" target="_blank">Facebook</a></li>
+                    <li><a href="https://www.linkedin.com/Umesh Kumar JB" target="_blank">LinkedIn</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

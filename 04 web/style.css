@@ -1,0 +1,88 @@
+/* Reset some default browser styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header Styling */
+h1 {
+    text-align: center;
+    color: #be9c00;
+    margin-bottom: 40px;
+}
+
+/* Section Titles */
+h2, h3, h4 {
+    color: #333;
+    margin: 20px 0 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Styling for the unordered list */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* List Item Styling */
+ul li {
+    background-color: #fff;
+    margin: 8px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for list items */
+ul li:hover {
+    transform: scale(1.05);
+}
+
+/* Link Styling */
+a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #5c6976;
+    font-size: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for links */
+a:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2, h3, h4 {
+        font-size: 20px;
+    }
+
+    a {
+        font-size: 16px;
+        padding: 12px;
+    }
+}

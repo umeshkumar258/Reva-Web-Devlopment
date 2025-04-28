@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traval</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightpink;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            padding-top: 20px;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+
+        header div {
+            margin-bottom: 15px;
+        }
+
+        form {
+            display: inline-block;
+            width: 100px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: calc(100% - 110px);
+            padding: 8px;
+            margin-left: 10px;
+            border: 2px solid #000;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: #28a745;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+        }
+
+        footer p {
+            margin: 0;
+            color: #333;
+        }
+
+        nav {
+            text-align: center;
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Destinations</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <h1>Traval Booking</h1>
+
+    <header>
+        <div>
+            <form action="name">Name</form>
+            <input type="text" id="name" placeholder="Enter your name">
+        </div>
+        <div>
+            <form action="age">Age</form>
+            <input type="number" id="age" min="1" placeholder="Enter your age">
+        </div>
+        <div>
+            <form action="address">Address</form>
+            <input type="text" id="address" placeholder="Enter your address">
+        </div>
+        <div>
+            <form action="phone">Phone Number</form>
+            <input type="tel" id="phone" placeholder="Enter your phone number">
+        </div>
+        <div>
+            <form action="from">From</form>
+            <input type="text" id="from" placeholder="Enter departure location">
+        </div>
+        <div>
+            <form action="destination">Destination</form>
+            <input type="text" id="destination" placeholder="Enter destination location">
+        </div>
+        <div>
+            <form action="date">Travel Date</form>
+            <input type="date" id="travel-date">
+        </div>
+        <div>
+            <form action="guests">Number of Guests</form>
+            <input type="number" id="guests" min="1" placeholder="Enter number of guests">
+        </div>
+        <div>
+            <form action="payment">Payment</form>
+            <input type="text" id="payment" value="5000" readonly>
+        </div>
+        <div>
+            <form action="payment-method">Payment Method</form>
+            <select id="payment-method">
+                <option value="upi">UPI &#x1F4B3;</option>
+                <option value="cash">Cash &#x1F4B0;</option>
+                <option value="card">Card &#x1F4B3;</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">Book Now</button>
+        </div>
+    </header>
+
+    <footer>
+        <p>Contact Us: +1-800-123-4567 | info@traval.com</p>
+    </footer>
+
+</body>
+</html>
