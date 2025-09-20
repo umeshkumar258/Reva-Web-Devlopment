@@ -1,72 +1,32 @@
-/* Reset default browser styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Lovable badge styling */
+#lovable-badge {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 141px;
+  padding: 5px 13px;
+  background-color: #000;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 5px;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  z-index: 1000000;
+  text-transform: none !important;
+  font-feature-settings: normal !important;
+  font-weight: 400 !important;
 }
 
-/* Set the background color and typography */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f4f8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-/* Container that holds all the elements */
-.container {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 100%;
-    max-width: 500px;
-}
-
-/* Styling for the select dropdown */
-.mood-selector {
-    margin-bottom: 1.5rem;
-}
-
-/* Styling for the button */
-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-/* Style for the quote box */
-#quote-box {
-    margin-top: 2rem;
-    padding: 1rem;
-    background-color: #f9f9f9;
-    border-left: 4px solid #4CAF50;
-    display: inline-block;
-    font-style: italic;
-    color: #333;
-    max-width: 100%;
-}
-
-/* Styling for the heading */
-h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-/* Styling for paragraph text */
-p {
-    font-size: 1.1rem;
-    color: #555;
+/* Close button for badge */
+#lovable-badge-close {
+  position: absolute;
+  top: -2px;
+  right: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #A1A1AA;
+  background: none;
+  border: none;
 }

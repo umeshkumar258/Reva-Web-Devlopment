@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css variables</title>
+</head>
+<style>
+    :root {
+        --primary-color: rgb(242, 0, 113);
+        --secondary-color: rgb(38, 15, 240);
+        --text-color: white;
+        --font-family: 'Courier New', Courier, monospace;
+    }
+    #main {
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        padding: 20px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-align: center;
+        border-radius: 8px;
+        margin: 20px auto;
+        max-width: 800px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: var(--font-family);
+        background-color: var(--secondary-color);
+        color: var(--text-color);
+        line-height: 1.6;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+        padding: 10px;
+        background-color: var(--primary-color);
+        font-size: large;
+        font-weight: bold;
+        color: var(--text-color);
+        text-transform: uppercase;
+    }
+
+    ul li {
+        cursor: pointer;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    ul li:hover {
+        color: var(--secondary-color);
+        transform: scale(1.1);
+    }
+
+    .continer {
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        padding: 20px;
+        border-radius: 8px;
+        margin: 20px auto;
+        max-width: 800px;
+        box-shadow: 0 4px 8px rgba(243, 0, 0, 0.2);
+    }
+</style>
+<body>
+    <div class="first">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+
+    <div id ="main">
+        sameer shinde
+    </div>
+
+    <div class="continer">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi, consectetur quae excepturi
+        reprehenderit delectus voluptate sunt amet minima soluta. Obcaecati deleniti ad ex optio perferendis molestias
+        magnam nulla quidem itaque.</div>
+
+</body>
+
+</html>

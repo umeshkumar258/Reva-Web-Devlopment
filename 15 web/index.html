@@ -1,26 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Css</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* Optional: Add some internal CSS for better appearance */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: blue;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        ol {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1 style="color: blue;">CSS Information</h1>
-    <p style="font-size: 16px;">CSS (Cascading Style Sheets) is used to style and layout web pages.</p>
+    <h1>CSS Information</h1>
+    <p style="font-size: 16px;">
+        CSS (Cascading Style Sheets) is used to style and layout web pages.
+    </p>
 
     <h2>Types of CSS</h2>
     <ul>
-        <li style="color: green;">Inline CSS: Applied directly within an HTML element using the "style" attribute.</li>
-        <li style="color: orange;">Internal CSS: Defined within a <style> tag inside the <head> section of the HTML document.</li>
-        <li style="color: red;">External CSS: Written in a separate file with a .css extension and linked to the HTML document.</li>
+        <li style="color: green;">
+            <strong>Inline CSS:</strong> Applied directly within an HTML element using the <code>style</code> attribute.
+        </li>
+        <li style="color: orange;">
+            <strong>Internal CSS:</strong> Defined within a <code>&lt;style&gt;</code> tag inside the &lt;head&gt; section.
+        </li>
+        <li style="color: red;">
+            <strong>External CSS:</strong> Written in a separate file with a <code>.css</code> extension and linked to the HTML.
+        </li>
     </ul>
 
+    <h2>Advantages of CSS</h2>
     <ol>
         <li>CSS can control the layout of multiple web pages all at once.</li>
         <li>It allows for greater consistency in design across a website.</li>
         <li>CSS reduces the size of HTML files by separating content from design.</li>
-        </ol>
+    </ol>
 </body>
 </html>

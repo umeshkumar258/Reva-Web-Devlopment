@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Nova — Modern Portfolio</title>
+<meta name="description" content="Nova — Modern responsive portfolio template with JS interactions, dark mode, and contact form." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23346ef1'/%3E%3Ctext x='50' y='58' font-size='50' text-anchor='middle' fill='white' font-family='Arial'%3EN%3C/text%3E%3C/svg%3E">
+<style>
+  /* ------------------------------------------
+     CSS Variables & Base
+     ------------------------------------------ */
+  :root{
+    --bg: #0f1724;
+    --card: #0b1220;
+    --muted: #98a0b3;
+    --text: #e6eef8;
+    --accent: #4f8ef7;
+    --accent-2: #7be4c7;
+    --glass: rgba(255,255,255,0.03);
+    --radius: 12px;
+    --shadow: 0 8px 30px rgba(2,6,23,0.6);
+    --glass-2: rgba(255,255,255,0.02);
+    --max-width: 1100px;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+    --ui-font: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue";
+  }
+  [data-theme="light"]{
+    --bg: #f6f9fc;
+    --card:#ffffff;
+    --muted:#6b7280;
+    --text:#0b1220;
+    --accent:#1e6fff;
+    --accent-2:#00b37e;
+    --glass: rgba(11,18,32,0.04);
+    --glass-2: rgba(2,6,23,0.02);
+    --shadow: 0 6px 18px rgba(20,30,60,0.08);
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:var(--ui-font);
+    background: radial-gradient(1200px 600px at 10% 10%, rgba(79,142,247,0.06), transparent),
+                radial-gradient(1000px 500px at 90% 90%, rgba(123,228,199,0.03), transparent),
+                var(--bg);
+    color:var(--text);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.5;
+    padding:32px 20px;
+  }
+
+  .wrap{max-width:var(--max-width);margin:0 auto;}
+
+  /* ------------------------------------------
+     Header / Nav
+     ------------------------------------------ */
+  header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    margin-bottom:28px;
+  }
+  .brand{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    text-decoration:none;
+    color:var(--text);
+  }
+  .logo{
+    width:50px;height:50px;border-radius:10px;
+    display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    color:white;font-weight:700;font-size:20px;box-shadow:var(--shadow);
+  }
+  nav{display:flex;gap:18px;align-items:center;}
+  nav a{
+    color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:10px;font-weight:600;
+  }
+  nav a:hover, nav a:focus{color:var(--text);background:var(--glass);outline:none}
+
+  .controls{display:flex;gap:10px;align-items:center;}
+  .btn{
+    background:linear-gradient(90deg,var(--accent), #65a6ff);
+    color:white;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:700;
+    box-shadow:0 6px 18px rgba(79,142,247,0.12);
+  }
+  .ghost{background:transparent;border:1px solid var(--glass);color:var(--text);padding:8px 12px;border-radius:10px}
+
+  /* ------------------------------------------
+     Hero
+     ------------------------------------------ */
+  .hero{
+    display:grid;
+    grid-template-columns:1fr 420px;
+    gap:28px;
+    align-items:center;
+    margin-bottom:36px;
+  }
+  .hero-card{
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+    padding:28px;border-radius:var(--radius);box-shadow:var(--shadow);
+    border:1px solid var(--glass-2);
+  }
+  h1{font-size:clamp(26px,4.2vw,42px);margin:0 0 12px 0;letter-spacing:-0.02em}
+  p.lead{color:var(--muted);margin:0 0 18px 0;font-size:1.05rem}
+
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+
+  .stats{
+    display:flex;gap:14px;margin-top:18px;
+  }
+  .stat{
+    background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+    padding:10px 12px;border-radius:10px;color:var(--muted);font-weight:700;font-size:0.95rem;
+  }
+
+  /* image mock */
+  .mock{
+    width:100%;height:320px;border-radius:12px;background:
+    linear-gradient(135deg, rgba(79,142,247,0.12), rgba(123,228,199,0.06));
+    display:grid;place-items:center;color:var(--text);font-weight:700;
+    border:1px solid var(--glass-2);
+  }
+
+  /* ------------------------------------------
+     Features
+     ------------------------------------------ */
+  .features{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:28px 0;
+  }
+  .card{
+    background:var(--card);padding:18px;border-radius:12px;border:1px solid var(--glass-2);
+    box-shadow: 0 6px 18px rgba(2,6,23,0.2);
+  }
+  .feature-icon{
+    width:44px;height:44px;border-radius:10px;display:grid;place-items:center;margin-bottom:10px;
+    background:linear-gradient(135deg, rgba(255,255,255,0.03), transparent);
+    color:var(--accent);
+  }
+  h3{margin:0 0 8px 0}
+  .muted{color:var(--muted);font-size:0.95rem}
+
+  /* ------------------------------------------
+     Portfolio Grid
+     ------------------------------------------ */
+  .portfolio{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:28px 0;
+  }
+  .work{
+    position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--glass-2);
+    min-height:160px;background:linear-gradient(180deg, rgba(0,0,0,0.15), transparent);
+  }
+  .work img{width:100%;height:100%;object-fit:cover;display:block}
+  .work-overlay{
+    position:absolute;inset:0;background:linear-gradient(180deg, rgba(2,6,23,0.2), rgba(2,6,23,0.6));
+    color:white;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;opacity:0;transition:all .28s ease;
+  }
+  .work:hover .work-overlay, .work:focus-within .work-overlay{opacity:1;transform:translateY(0)}
+
+  /* ------------------------------------------
+     Testimonials
+     ------------------------------------------ */
+  .carousel{
+    display:flex;gap:12px;align-items:center;
+  }
+  .testimonial{
+    padding:14px;border-radius:12px;background:var(--card);min-width:280px;border:1px solid var(--glass-2);
+  }
+  .controls-mini{display:flex;gap:8px}
+
+  /* ------------------------------------------
+     Contact
+     ------------------------------------------ */
+  form{display:grid;gap:10px}
+  label{font-size:0.9rem;color:var(--muted)}
+  input,textarea,select{
+    padding:12px;border-radius:10px;border:1px solid var(--glass-2);background:transparent;color:var(--text);
+    outline:none;font-size:1rem;
+  }
+  input:focus,textarea:focus{box-shadow:0 6px 18px rgba(79,142,247,0.08);border-color:var(--accent)}
+  .row{display:flex;gap:10px}
+  .row .half{flex:1}
+
+  /* ------------------------------------------
+     Footer & small screens
+     ------------------------------------------ */
+  footer{margin-top:36px;color:var(--muted);font-size:0.95rem;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  @media (max-width:980px){
+    .hero{grid-template-columns:1fr;gap:18px}
+    .mock{height:260px}
+    header{flex-direction:column;align-items:stretch;gap:14px}
+    nav{flex-wrap:wrap}
+  }
+
+  /* ------------------------------------------
+     Tiny helpers & animations
+     ------------------------------------------ */
+  .fade-up{transform:translateY(10px);opacity:0;transition:opacity .5s ease, transform .5s ease}
+  .fade-up.inview{transform:none;opacity:1}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+</style>
+</head>
+<body>
+  <div class="wrap" id="top">
+    <header>
+      <a class="brand" href="#top" aria-label="Go to top">
+        <div class="logo" aria-hidden="true">N</div>
+        <div>
+          <div style="font-weight:800">Nova</div>
+          <div style="font-size:0.85rem;color:var(--muted);margin-top:2px">Design & Dev</div>
+        </div>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="#features">Features</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="controls" role="region" aria-label="Top controls">
+        <button class="ghost" id="themeToggle" aria-pressed="false" title="Toggle theme">🌗</button>
+        <a class="btn" href="#contact">Work with us</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-label="Hero">
+        <div class="hero-card fade-up" data-delay="0">
+          <h1>Beautiful interfaces, engineered for performance.</h1>
+          <p class="lead">We craft accessible, fast, and delightful web experiences. Focused on clarity, speed, and meaningful interaction.</p>
+          <div class="hero-cta">
+            <a class="btn" href="#portfolio">View portfolio</a>
+            <button class="ghost" id="scrollDemo">See demo</button>
+          </div>
+
+          <div class="stats" role="list" aria-label="Company stats">
+            <div class="stat" role="listitem">120+ Projects</div>
+            <div class="stat" role="listitem">98% Success</div>
+            <div class="stat" role="listitem">10 Years</div>
+          </div>
+        </div>
+
+        <aside class="mock fade-up" data-delay="120" aria-hidden="false" tabindex="0">
+          <svg width="220" height="180" viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Product mockup">
+            <rect x="6" y="6" width="208" height="168" rx="12" fill="rgba(255,255,255,0.06)"></rect>
+            <g transform="translate(18,28)" fill="none" stroke="#fff" opacity="0.7">
+              <rect width="184" height="116" rx="8" stroke-width="1" fill="rgba(255,255,255,0.02)"></rect>
+              <circle cx="24" cy="24" r="10" fill="white" opacity="0.15"></circle>
+            </g>
+            <text x="110" y="140" font-size="14" fill="white" opacity="0.85" text-anchor="middle">Interactive Prototype</text>
+          </svg>
+        </aside>
+      </section>
+
+      <section id="features" class="fade-up" data-delay="220" aria-labelledby="feat-title">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <h2 id="feat-title">What we do</h2>
+          <div style="color:var(--muted)">Fast, reliable, delightful</div>
+        </div>
+
+        <div class="features" aria-hidden="false">
+          <article class="card" tabindex="0">
+            <div class="feature-icon">⚡</div>
+            <h3>Performance-first</h3>
+            <p class="muted">Optimized bundling, lazy loading, and modern images for <strong>fast</strong> experiences.</p>
+          </article>
+
+          <article class="card" tabindex="0">
+            <div class="feature-icon">♿</div>
+            <h3>Accessible</h3>
+            <p class="muted">WCAG-aware patterns, semantic HTML, keyboard & screen reader friendly UI.</p>
+          </article>
+
+          <article class="card" tabindex="0">
+            <div class="feature-icon">🎨</div>
+            <h3>Design systems</h3>
+            <p class="muted">Reusable components and tokens so your product scales visually and functionally.</p>
+          </article>
+
+          <article class="card" tabindex="0">
+            <div class="feature-icon">⚙️</div>
+            <h3>Full-stack</h3>
+            <p class="muted">From static sites to serverless APIs — integration with modern tooling and infra.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="portfolio" aria-labelledby="port-title" style="margin-top:18px">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <h2 id="port-title">Selected Work</h2>
+          <div style="color:var(--muted)">Curated case studies</div>
+        </div>
+
+        <div class="portfolio" role="list">
+          <!-- Work item -->
+          <figure class="work card" tabindex="0" role="listitem" aria-label="Project: Aurora dashboard">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='600'><rect width='100%' height='100%' fill='%233b82f6'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='32' fill='white'>Aurora Dashboard</text></svg>" alt="Aurora Dashboard screenshot">
+            <figcaption class="work-overlay">
+              <div style="font-weight:800">Aurora Dashboard</div>
+              <div style="font-size:0.9rem;color:rgba(255,255,255,0.85)">Analytics UX + frontend</div>
+            </figcaption>
+          </figure>
+
+          <figure class="work card" tabindex="0" role="listitem" aria-label="Project: Prism marketing site">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='600'><rect width='100%' height='100%' fill='%2383e9c1'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='32' fill='%230b1220'>Prism Site</text></svg>" alt="Prism marketing site screenshot">
+            <figcaption class="work-overlay">
+              <div style="font-weight:800">Prism Site</div>
+              <div style="font-size:0.9rem;color:rgba(255,255,255,0.85)">Content & performance</div>
+            </figcaption>
+          </figure>
+
+          <figure class="work card" tabindex="0" role="listitem" aria-label="Project: Beacon e-commerce">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='600'><rect width='100%' height='100%' fill='%23ffd166'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='32' fill='%230b1220'>Beacon Shop</text></svg>" alt="Beacon e-commerce screenshot">
+            <figcaption class="work-overlay">
+              <div style="font-weight:800">Beacon Shop</div>
+              <div style="font-size:0.9rem;color:rgba(0,0,0,0.8)">Conversion optimization + AMP</div>
+            </figcaption>
+          </figure>
+
+          <figure class="work card" tabindex="0" role="listitem" aria-label="Project: Atlas internal tools">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='600'><rect width='100%' height='100%' fill='%236b7280'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='32' fill='white'>Atlas Tools</text></svg>" alt="Atlas internal tools screenshot">
+            <figcaption class="work-overlay">
+              <div style="font-weight:800">Atlas Tools</div>
+              <div style="font-size:0.9rem;color:rgba(255,255,255,0.85)">Internal dashboards & tooling</div>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="testimonials" aria-labelledby="test-title" style="margin-top:18px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+          <h2 id="test-title">What clients say</h2>
+          <div class="controls-mini">
+            <button class="ghost" id="prevTest" aria-label="Previous testimonial">◀</button>
+            <button class="ghost" id="nextTest" aria-label="Next testimonial">▶</button>
+          </div>
+        </div>
+
+        <div class="carousel" id="carousel" role="region" aria-live="polite">
+          <div class="testimonial card" data-index="0">
+            <strong>“They launched our product in 6 weeks — impeccable craft.”</strong>
+            <div class="muted" style="margin-top:8px">— Priya Sharma, Product</div>
+          </div>
+
+          <div class="testimonial card" data-index="1" style="display:none">
+            <strong>“Attention to accessibility made a big difference for our users.”</strong>
+            <div class="muted" style="margin-top:8px">— Ahmed Khan, CTO</div>
+          </div>
+
+          <div class="testimonial card" data-index="2" style="display:none">
+            <strong>“Performance improved and conversion followed.”</strong>
+            <div class="muted" style="margin-top:8px">— Li Wei, Growth</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" aria-labelledby="contact-title" style="margin-top:28px">
+        <h2 id="contact-title">Get in touch</h2>
+        <p class="muted">Tell us about your project — client side validation only. No spam, promise.</p>
+
+        <div class="hero-card" style="margin-top:12px;">
+          <form id="contactForm" novalidate>
+            <div class="row">
+              <div class="half">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required minlength="2" />
+              </div>
+              <div class="half">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@domain.com" required />
+              </div>
+            </div>
+
+            <label for="budget">Budget range</label>
+            <select id="budget" name="budget" required>
+              <option value="">Select one</option>
+              <option value="small">Under $5k</option>
+              <option value="med">$5k–$20k</option>
+              <option value="large">$20k+</option>
+            </select>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us a bit about your needs..." required minlength="10"></textarea>
+
+            <div style="display:flex;gap:10px;margin-top:6px">
+              <button type="submit" class="btn">Send message</button>
+              <button type="button" class="ghost" id="resetBtn">Reset</button>
+              <div id="formStatus" aria-live="polite" style="margin-left:auto;color:var(--muted);align-self:center"></div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> Nova — Crafted with care</div>
+      <div class="muted">Made using HTML • CSS • JavaScript</div>
+    </footer>
+  </div>
+
+<script>
+/* ------------------------------
+   Utilities & small helpers
+   ------------------------------ */
+(function(){
+  // set year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // theme toggling (persists in localStorage)
+  const root = document.documentElement;
+  const stored = localStorage.getItem('nova:theme');
+  const preferDark = window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches;
+  const initialTheme = stored || (preferDark ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-theme', initialTheme);
+  document.getElementById('themeToggle').setAttribute('aria-pressed', initialTheme === 'dark');
+
+  document.getElementById('themeToggle').addEventListener('click', e => {
+    const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('nova:theme', next);
+    e.currentTarget.setAttribute('aria-pressed', next === 'dark');
+  });
+
+  // Smooth scroll polyfill for anchor clicks
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      const id = a.getAttribute('href');
+      if(id === '#' || id === '#!' ) return;
+      const target = document.querySelector(id);
+      if(target){
+        e.preventDefault();
+        target.scrollIntoView({behavior:'smooth',block:'start'});
+        history.pushState && history.pushState(null, '', id);
+      }
+    });
+  });
+
+  // Simple fade-in when elements in viewport
+  const reveal = () => {
+    document.querySelectorAll('.fade-up').forEach(el=>{
+      const rect = el.getBoundingClientRect();
+      const offset = 100;
+      if(rect.top < window.innerHeight - offset){
+        el.classList.add('inview');
+      }
+    });
+  };
+  reveal();
+  window.addEventListener('scroll', reveal, {passive:true});
+  window.addEventListener('resize', reveal);
+
+  // Demo scroll button (scroll to portfolio)
+  document.getElementById('scrollDemo').addEventListener('click', ()=> {
+    document.querySelector('#portfolio').scrollIntoView({behavior:'smooth'});
+  });
+
+  // Testimonials carousel (simple)
+  const tests = Array.from(document.querySelectorAll('.testimonial'));
+  let testIndex = 0;
+  const showTest = idx => {
+    tests.forEach((t,i)=> t.style.display = i === idx ? 'block' : 'none');
+  };
+  document.getElementById('nextTest').addEventListener('click', ()=> {
+    testIndex = (testIndex + 1) % tests.length;
+    showTest(testIndex);
+  });
+  document.getElementById('prevTest').addEventListener('click', ()=> {
+    testIndex = (testIndex - 1 + tests.length) % tests.length;
+    showTest(testIndex);
+  });
+  // auto rotate
+  let auto = setInterval(()=> { testIndex = (testIndex + 1) % tests.length; showTest(testIndex); }, 6000);
+  [document.getElementById('nextTest'), document.getElementById('prevTest')].forEach(btn => {
+    btn.addEventListener('click', ()=> { clearInterval(auto); auto = setInterval(()=> { testIndex = (testIndex + 1) % tests.length; showTest(testIndex); }, 6000); });
+  });
+
+  // Contact form client-side validation + simulated submit
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+  const resetBtn = document.getElementById('resetBtn');
+
+  function validateEmail(email){
+    // Digit-by-digit careful simple regex (not perfect but robust)
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  form.addEventListener('submit', e=>{
+    e.preventDefault();
+    status.textContent = '';
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+    const budget = form.budget.value;
+
+    // Field checks (step-by-step)
+    if(name.length < 2){ status.textContent = 'Please enter a valid name.'; form.name.focus(); return; }
+    if(!validateEmail(email)){ status.textContent = 'Please enter a valid email.'; form.email.focus(); return; }
+    if(!budget){ status.textContent = 'Please select a budget range.'; form.budget.focus(); return; }
+    if(message.length < 10){ status.textContent = 'Message should be at least 10 characters.'; form.message.focus(); return; }
+
+    // Simulate "sending"
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    // Simulate a small delay then success (no backend)
+    setTimeout(()=> {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send message';
+      status.style.color = 'var(--accent-2)';
+      status.textContent = 'Thanks — your message is ready to be sent (client-side demo).';
+      form.reset();
+      // keep theme of status for readability in both themes
+      setTimeout(()=> { status.textContent = ''; status.style.color = ''; }, 6000);
+    }, 900);
+  });
+
+  resetBtn.addEventListener('click', ()=> {
+    form.reset(); status.textContent = '';
+  });
+
+  // Accessibility: keyboard focus visible tweak
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Tab') document.documentElement.classList.add('show-focus');
+  });
+
+})();
+</script>
+</body>
+</html>

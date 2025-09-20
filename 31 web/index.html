@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Boxes</title>
+    <style>
+        :root {
+            --primary-color: #e0f7fa;
+            --secondary-color: #0288d1;
+            --text-color: #212121;
+            --mobile-bg: #8e24aa;
+            --box1-bg: #f5f5dc;
+            --box2-bg: #1976d2;
+            --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font);
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            padding: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .box {
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .box:hover {
+            transform: scale(1.02);
+        }
+
+        .box1 {
+            background-color: var(--box1-bg);
+            font-weight: bold;
+        }
+
+        .box2 {
+            background-color: var(--box2-bg);
+            color: white;
+        }
+
+        @media only screen and (max-width: 499px) {
+            body {
+                background-color: var(--mobile-bg);
+            }
+
+            .box1 {
+                background-color: #6d4c41;
+                color: white;
+            }
+
+            .box2 {
+                background-color: #4caf50;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Hey, I am back</div>
+    <div class="box box1">I am box 1</div>
+    <div class="box box2">I am box 2</div>
+</body>
+</html>

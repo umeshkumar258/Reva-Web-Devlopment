@@ -1,58 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>css postion property</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JEE Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f5f7;
+      margin: 0;
+      padding: 0;
+    }
 
-        }
-        .box1{
-            background-color: aqua;
-            color: blue;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: large;
-            font-weight: bold;
-        }
-        .box2{
-            background-color: red;
-            color: yellow;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            font-size: larger;
-            font-weight: bold;
-        }
-        .box3 {
-            background-color: green;
-            color: white;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: medium;
-            font-weight: normal;
-        }
-        .box4 {
-            background-color: purple;
-            color: pink;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: small;
-            font-weight: lighter;
-        }
+    h1 {
+      text-align: center;
+      color: #0a4d8c;
+      margin-top: 30px;
+    }
 
-        .box{
-            height: 133px;
-            width: 80wx;
-            padding: 3px;
-            margin: 3px;
-            border: 3px solid black;
-        }
+    form {
+      background-color: #fff;
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
 
-    </style>
+    div {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"],
+    input[type="tel"],
+    input[type="file"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    button[type="submit"] {
+      background-color: #007bff;
+      color: white;
+    }
+
+    button[type="reset"] {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 600px) {
+      form {
+        padding: 20px;
+      }
+
+      button {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class=" box box1"> </div>
-    <div class=" box box2"></div>
-    <div class=" box box3"></div>
-    <div class=" box box4"></div>
+
+  <h1>JEE Registration Form</h1>
+
+  <form action="submit.php" method="post" enctype="multipart/form-data">
+
+    <div>
+      <label for="name">Full Name:</label>
+      <input id="name" type="text" name="name" placeholder="Enter your full name" required>
+    </div>
+
+    <div>
+      <label for="phone">Phone Number:</label>
+      <input id="phone" type="tel" name="phone" placeholder="Enter your phone number" required>
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input id="email" type="email" name="email" placeholder="Enter your email" required>
+    </div>
+
+    <div>
+      <label>Gender:</label>
+      <input type="radio" id="male" name="gender" value="male">
+      <label for="male">Male</label>
+
+      <input type="radio" id="female" name="gender" value="female">
+      <label for="female">Female</label>
+
+      <input type="radio" id="other" name="gender" value="other">
+      <label for="other">Other</label>
+    </div>
+
+    <div>
+      <label for="dob">Date of Birth:</label>
+      <input id="dob" type="date" name="dob" required>
+    </div>
+
+    <div>
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" rows="4" cols="40" placeholder="Enter your address"></textarea>
+    </div>
+
+    <div>
+      <label for="roll">JEE Roll Number:</label>
+      <input id="roll" type="text" name="roll" placeholder="Enter your JEE roll number" required>
+    </div>
+
+    <div>
+      <label for="password">Password:</label>
+      <input id="password" type="password" name="password" placeholder="Create a password" required>
+    </div>
+
+    <div>
+      <label for="confirm">Confirm Password:</label>
+      <input id="confirm" type="password" name="confirm" placeholder="Re-enter your password" required>
+    </div>
+
+    <div>
+      <label for="photo">Upload Photo:</label>
+      <input id="photo" type="file" name="photo" accept="image/*">
+    </div>
+
+    <div>
+      <label for="city">Select City:</label>
+      <select id="city" name="city">
+        <option value="">--Select--</option>
+        <option value="bangalore">Bangalore</option>
+        <option value="delhi">Delhi</option>
+        <option value="mumbai">Mumbai</option>
+        <option value="chennai">Chennai</option>
+      </select>
+    </div>
+
+    <div>
+      <input id="agree" type="checkbox" name="terms" required>
+      <label for="agree">I agree to the terms and conditions</label>
+    </div>
+
+    <div>
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </div>
+
+  </form>
+
 </body>
 </html>

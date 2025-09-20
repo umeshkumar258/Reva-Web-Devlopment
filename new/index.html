@@ -1,20 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Umesh Kumar JB - Full Stack Developer Portfolio</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <!-- SEO Meta -->
+    <meta name="description" content="Professional portfolio of Umesh Kumar JB, a skilled Full Stack Developer specializing in React, Node.js, and modern web technologies. View projects, experience, and get in touch." />
+    <meta name="author" content="Umesh Kumar JB" />
+    <meta name="keywords" content="full stack developer, web developer, React, Node.js, JavaScript, TypeScript, portfolio, software engineer" />
 
-<body>
-    <h1>Hello, World!</h1>
-    <img src="data:image/jpeg;base64,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
-    " alt="">
-    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fin.pinterest.com%2Fmohithrocks45%2Fappu%2F&psig=AOvVaw2LABCgPGdgXOh2dh6-fRdQ&ust=1735897952927000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMCv_63i1ooDFQAAAAAdAAAAABAE"
-        alt="">
-        <img src="https://i.pinimg.com/550x/99/29/43/9929438ecb581ce47cf919d301c51dde.jpg" alt="">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_oml742jVIz5mQuzrlbBcjWlmIzO5KX5U4g&s" alt="">
-</body>
+    <!-- Open Graph -->
+    <meta property="og:title" content="Umesh Kumar JB - Full Stack Developer Portfolio" />
+    <meta property="og:description" content="Professional portfolio showcasing web development expertise in React, Node.js, and modern technologies. View projects and experience." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/eef7b78c-5a60-4050-8713-8bb7346d188c/id-preview-76ac45a6--4b3e202c-36e6-4bc9-8d0e-7884691d5148.lovable.app-1757247311363.png" />
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@umeshkumarjb" />
+    <meta name="twitter:title" content="Umesh Kumar JB - Full Stack Developer Portfolio" />
+    <meta name="twitter:description" content="Professional portfolio showcasing web development expertise in React, Node.js, and modern technologies." />
+    <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/eef7b78c-5a60-4050-8713-8bb7346d188c/id-preview-76ac45a6--4b3e202c-36e6-4bc9-8d0e-7884691d5148.lovable.app-1757247311363.png" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://umeshkumarjb.dev/" />
+
+    <!-- Main Assets -->
+    <script type="module" crossorigin src="/assets/index-C8czFt-P.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-GO-zcVzM.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script src="https://cdn.gpteng.co/lovable.js" type="module"></script>
+  
+    <a id="lovable-badge" target="_blank" href="https://lovable.dev/projects/4b3e202c-36e6-4bc9-8d0e-7884691d5148?utm_source=lovable-badge">
+      <span style="color: #A1A1AA;">Edit with</span>
+      <!-- SVG Logo -->
+      <svg width="60" height="12" viewBox="0 0 116 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- (SVG paths remain unchanged) -->
+      </svg>
+      <button id="lovable-badge-close">&times;</button>
+    </a>
+
+    <script>
+      // Hide badge if in iframe or puppeteer
+      if (window.self !== window.top || navigator.userAgent.includes('puppeteer')) {
+        var badge = document.getElementById('lovable-badge');
+        if (badge) badge.style.display = 'none';
+      }
+
+      // Close button action
+      var closeButton = document.getElementById('lovable-badge-close');
+      if (closeButton) {
+        closeButton.addEventListener('click', function (event) {
+          event.preventDefault();
+          event.stopPropagation();
+          var badge = document.getElementById('lovable-badge');
+          if (badge) badge.style.display = 'none';
+        });
+      }
+    </script>
+  </body>
 </html>
