@@ -1,11 +1,9 @@
-/* Reset some default browser styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Basic Body Styling */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -14,14 +12,12 @@ body {
     padding: 20px;
 }
 
-/* Header Styling */
 h1 {
     text-align: center;
     color: #be9c00;
     margin-bottom: 40px;
 }
 
-/* Section Titles */
 h2, h3, h4 {
     color: #333;
     margin: 20px 0 10px;
@@ -29,13 +25,11 @@ h2, h3, h4 {
     font-weight: bold;
 }
 
-/* Styling for the unordered list */
 ul {
     list-style: none;
     padding: 0;
 }
 
-/* List Item Styling */
 ul li {
     background-color: #fff;
     margin: 8px 0;
@@ -45,12 +39,10 @@ ul li {
     transition: transform 0.3s ease;
 }
 
-/* Hover effect for list items */
 ul li:hover {
     transform: scale(1.05);
 }
 
-/* Link Styling */
 a {
     display: block;
     padding: 15px;
@@ -61,13 +53,11 @@ a {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Hover effect for links */
 a:hover {
     background-color: #0056b3;
     color: #fff;
 }
 
-/* Media Query for smaller screens */
 @media (max-width: 768px) {
     body {
         padding: 10px;
