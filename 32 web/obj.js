@@ -32,3 +32,5 @@ while (true) {
 
     console.log("Try again!");
 }
+
+alert("it is done");
