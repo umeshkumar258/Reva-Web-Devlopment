@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Protein Store</title>
+</head>
+
+<style>
+    :root {
+        --ink: #18231f;
+        --muted: #65736d;
+        --green: #1f6b4f;
+        --green-dark: #124333;
+        --mint: #e5f3ed;
+        --orange: #ed8b3d;
+        --line: #d9e5df;
+        --white: #ffffff;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        color: var(--ink);
+        background: #f7faf8;
+        font-family: Georgia, 'Times New Roman', serif;
+        line-height: 1.6;
+    }
+
+    header,
+    body > section,
+    body > footer {
+        width: min(1100px, calc(100% - 40px));
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 28px 0;
+    }
+
+    header h1 {
+        margin: 0;
+        color: var(--green-dark);
+        font-size: clamp(1.7rem, 4vw, 2.4rem);
+        letter-spacing: 0;
+    }
+
+    header p {
+        margin: 4px 0 0;
+        color: var(--muted);
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    nav a {
+        color: var(--green-dark);
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+        color: var(--orange);
+    }
+
+    hr {
+        margin: 0;
+        border: 0;
+        border-top: 1px solid var(--line);
+    }
+
+    body > section {
+        padding: 64px 0;
+    }
+
+    body > section:first-of-type {
+        width: 100%;
+        max-width: none;
+        padding: 100px max(20px, calc((100% - 1100px) / 2));
+        color: var(--white);
+        background: linear-gradient(120deg, var(--green-dark), var(--green));
+    }
+
+    body > section:first-of-type h2 {
+        max-width: 650px;
+        margin: 0 0 12px;
+        font-size: clamp(2.2rem, 6vw, 4.6rem);
+        line-height: 1.05;
+    }
+
+    body > section:first-of-type p {
+        max-width: 530px;
+        margin: 0 0 28px;
+        color: #d8eee4;
+        font-size: 1.15rem;
+    }
+
+    #shop,
+    button {
+        border: 0;
+        border-radius: 6px;
+        padding: 12px 20px;
+        color: var(--white);
+        background: var(--orange);
+        cursor: pointer;
+        font: inherit;
+        font-weight: bold;
+        transition: transform 160ms ease, background 160ms ease;
+    }
+
+    #shop:hover,
+    button:hover {
+        background: #d8742a;
+        transform: translateY(-2px);
+    }
+
+    body > section:nth-of-type(2) h2,
+    body > section:nth-of-type(3) h2,
+    body > section:nth-of-type(4) h2,
+    body > section:nth-of-type(5) h2 {
+        margin-top: 0;
+        color: var(--green-dark);
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    body > section:nth-of-type(2) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    body > section:nth-of-type(2) h2 {
+        grid-column: 1 / -1;
+    }
+
+    body > section:nth-of-type(2) > div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--white);
+        box-shadow: 0 10px 24px rgba(18, 67, 51, 0.07);
+    }
+
+    body > section:nth-of-type(2) > div br {
+        display: none;
+    }
+
+    body > section:nth-of-type(2) img {
+        width: 100%;
+        height: 210px;
+        border-radius: 6px;
+        object-fit: cover;
+        background: var(--mint);
+    }
+
+    body > section:nth-of-type(2) h3 {
+        margin: 18px 0 4px;
+        color: var(--green-dark);
+        font-size: 1.35rem;
+    }
+
+    body > section:nth-of-type(2) p {
+        margin: 4px 0;
+        color: var(--muted);
+    }
+
+    body > section:nth-of-type(2) p:last-of-type {
+        margin-top: auto;
+        padding: 10px 0;
+        color: var(--green-dark);
+        font-weight: bold;
+    }
+
+    body > section:nth-of-type(3) {
+        background: var(--mint);
+    }
+
+    body > section:nth-of-type(3) ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    body > section:nth-of-type(3) li {
+        padding: 18px 10px;
+        border: 1px solid #c7ded3;
+        border-radius: 6px;
+    }
+
+    body > section:nth-of-type(4) p {
+        max-width: 650px;
+        margin: 0 auto;
+        color: var(--muted);
+        text-align: center;
+        font-size: 1.1rem;
+    }
+
+    body > section:nth-of-type(5) form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px 18px;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    body > section:nth-of-type(5) form br {
+        display: none;
+    }
+
+    body > section:nth-of-type(5) label {
+        color: var(--green-dark);
+        font-weight: bold;
+    }
+
+    body > section:nth-of-type(5) input,
+    body > section:nth-of-type(5) textarea {
+        width: 100%;
+        margin-top: 4px;
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 5px;
+        background: var(--white);
+        color: var(--ink);
+        font: inherit;
+    }
+
+    body > section:nth-of-type(5) textarea,
+    body > section:nth-of-type(5) button {
+        grid-column: 1 / -1;
+    }
+
+    body > section:nth-of-type(5) textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    footer {
+        padding: 24px 0;
+        color: var(--muted);
+        text-align: center;
+    }
+
+    @media (max-width: 720px) {
+        header {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        body > section:nth-of-type(2),
+        body > section:nth-of-type(3) ul {
+            grid-template-columns: 1fr;
+        }
+
+        body > section:nth-of-type(5) form {
+            grid-template-columns: 1fr;
+        }
+
+        body > section:nth-of-type(5) textarea,
+        body > section:nth-of-type(5) button {
+            grid-column: auto;
+        }
+    }
+</style>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>FitProtein Store</h1>
+        <p>Your fitness and protein products store</p>
+
+        <nav>
+            <a href="#">Home</a> |
+            <a href="#">Products</a> |
+            <a href="#">About</a> |
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <hr>
+
+    <!-- Banner -->
+    <section>
+        <h2>Build Your Body With Quality Protein</h2>
+        <p>Get high-quality protein products at affordable prices.</p>
+        <button id="shop" onclick="location.href='https://onlywhatsneeded.in/'" >Shop Now</button >
+    </section>
+
+    <hr>
+
+    <!-- Products -->
+    <section>
+        <h2 style="color: brown;">Our Protein Products</h2>
+
+        <div>
+            <img src="way.jpeg" alt="Whey Protein">
+            <h3>Whey Protein</h3>
+            <p>High quality whey protein for muscle growth.</p>
+            <p>Price: ₹2,499</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <br>
+
+        <div>
+            <img src="pro.jpeg" alt="Protein Powder">
+            <h3>Chocolate Protein Powder</h3>
+            <p>Delicious chocolate flavour protein powder.</p>
+            <p>Price: ₹1,999</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <br>
+
+        <div>
+            <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRStw4LiCzp41K0jXkUMCyWthkQk-ZZT8_3gF5eCvrAsA&s=10" alt="Protein Bar" width="250">
+            <h3>Protein Bars</h3>
+            <p>Healthy protein bars for your daily workout.</p>
+            <p>Price: ₹499</p>
+            <button>Add to Cart</button>
+        </div>
+
+    </section>
+
+    <hr>
+
+    <!-- Why Choose Us -->
+    <section>
+        <h2>Why Choose Us?</h2>
+
+        <ul>
+            <li>High Quality Products</li>
+            <li>Affordable Prices</li>
+            <li>Fast Delivery</li>
+            <li>Secure Payment</li>
+        </ul>
+    </section>
+
+    <hr>
+
+    <!-- About -->
+    <section>
+        <h2>About Us</h2>
+        <p>
+            FitProtein Store provides protein products for people
+            who want to improve their fitness and maintain a healthy lifestyle.
+        </p>
+    </section>
+
+    <hr>
+
+    <!-- Contact -->
+    <section>
+        <h2>Contact Us</h2>
+
+        <form>
+            <label>Name:</label>
+            <input type="text" placeholder="Enter your name">
+
+            <br><br>
+
+            <label>Email:</label>
+            <input type="email" placeholder="Enter your email">
+
+            <br><br>
+
+            <label>Message:</label>
+            <textarea placeholder="Enter your message"></textarea>
+
+            <br><br>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 FitProtein Store. All rights reserved.</p>
+        <p>Follow us on <a href="https://www.instagram.com/">Instagram</a>, <a href="https://www.facebook.com/">Facebook</a>, and <a href="https://twitter.com/">Twitter</a>.</p>
+    </footer>
+
+</body>
+</html>
