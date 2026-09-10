@@ -1,0 +1,27 @@
+/* Base container styling */
+.card {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* Common styling for all paragraph elements */
+.card p {
+    margin: 5px 0;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+/* Style for the first paragraph in each container */
+.card > p:first-child {
+    color: #ffffff;
+    background-color: #8b0000; /* Darker red/brown for better text contrast */
+    font-weight: bold;
+}
+
+/* Style for all remaining paragraphs */
+.card > p:not(:first-child) {
+    color: #ffffff;
+    background-color: #008b8b; /* Dark cyan/aqua tone for readability */
+}
