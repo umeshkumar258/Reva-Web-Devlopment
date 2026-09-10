@@ -3,46 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>specificity and cadsing</title>
+    <title>Specificity and Cascading</title>
+    <style>
+        h1 {
+            color: red;
+            background-color: blueviolet;
+        }
+
+        .cred {
+            color: aqua;
+        }
+
+        .and {
+            color: green;
+        }
+
+        h2 {
+            color: rgb(88, 0, 230);
+            background-color: blanchedalmond;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-align: center;
+            text-decoration: underline dotted;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        #new {
+            color: black;
+        }
+
+        #one {
+            color: chartreuse;
+        }
+    </style>
 </head>
-<style>
-    h1{
-        color: red;;
-    }
-    
-
-    .cred{
-        color :aqua;
-    }
-    .and{
-        color:green
-    }
-    h1{
-        background-color: blueviolet;
-    }
-    h2{
-        color: rgb(88, 0, 230);
-        background-color: blanchedalmond;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        text-align: center;
-        text-decoration: dotted;
-        text-shadow: 22px;
-    }
-    #new{
-        color: black;
-    }
-
-    #one{
-        color:chartreuse;
-    }
-
-</style>
 <body>
     <div>
-        <h1 class="cred and best" id="new one"> hey specificity and cassing</h1>
+        <h1 class="cred and best" id="new">hey specificity and cascading</h1>
     </div>
     <div>
-        <h2> hey i am back</h2>
+        <h2>hey i am back</h2>
     </div>
 </body>
 </html>
