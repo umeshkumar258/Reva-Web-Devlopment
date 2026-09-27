@@ -1,3 +1,5 @@
+alert("Jee Application")
+
 document.getElementById('jee-form').addEventListener('submit', function (e) {
   e.preventDefault();
 
