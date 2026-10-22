@@ -1,45 +1,85 @@
-/* General styles */
+/* ==========================================================================
+   1. Design Tokens & Variables
+   ========================================================================== */
+:root {
+  /* Colors */
+  --color-bg: #f8f9fa;
+  --color-surface: #ffffff;
+  --color-text-main: #212529;
+  --color-text-muted: #495057;
+  
+  --color-primary: #0d6efd;
+  --color-primary-hover: #0b5ed7;
+  --color-accent: #e65100;
+
+  /* Typography */
+  --font-family-base: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+
+  /* Layout & Spacing */
+  --border-radius: 8px;
+  --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --transition: all 0.2s ease-in-out;
+}
+
+/* ==========================================================================
+   2. Base & Reset
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  margin: 0;
+  padding: 1.5rem;
 }
 
-/* Paragraph styling */
 p {
-    font-size: 18px;
-    margin: 20px 0;
-    color: #555;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+  margin-top: 0;
+  margin-bottom: 1.25rem;
 }
 
-/* Anchor tag styling */
+/* Links */
 a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
 }
 
-a:hover {
-    text-decoration: underline;
-    color: #0056b3;
+a:hover,
+a:focus-visible {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
 }
 
-/* Div styling */
-div {
-    background-color: #e0e0e0;
-    padding: 15px;
-    margin: 20px 0;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 18px;
+/* ==========================================================================
+   3. Components
+   ========================================================================== */
+
+/* Card / Box Component (Replaces generic `div` styling) */
+.card,
+.box {
+  background-color: var(--color-surface);
+  padding: 1.25rem;
+  margin: 1.25rem 0;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  font-size: var(--font-size-lg);
 }
 
-/* Span styling */
-span {
-    color: #ff5722;
-    font-weight: bold;
-    font-style: italic;
+/* Text Highlight (Replaces generic `span` styling) */
+.highlight {
+  color: var(--color-accent);
+  font-weight: 600;
+  font-style: italic;
 }
