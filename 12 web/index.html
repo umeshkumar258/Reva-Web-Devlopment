@@ -5,32 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Umesh Kumar JB</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
         .media-container {
             display: flex;
-            gap: 20px;
+            gap: 30px;
+            flex-wrap: wrap;
         }
-        nav {
+
+        .media-card {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            gap: 10px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .media-card h2 {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        img, video {
+            border-radius: 6px;
+            max-width: 100%;
         }
     </style>
 </head>
 <body>
+
     <header>
-        <!-- Wrap image and video in a flex container for side-by-side layout -->
-        <div class="media-container">
-            <nav>
-                <h1>Hey This is my Image</h1>
-                <img src="umesh.jpg" alt="content" height="360">
-            </nav>
-            <nav>
-                <h2>Hey this is my video</h2>
-                <video src="name.mp4" controls width="360"></video>
-                <h3>This is my Audio</h3>
-                <audio src="appu.mp3" controls></audio>
-            </nav>
-        </div>
+        <h1>Umesh Kumar JB</h1>
     </header>
+
+    <main>
+        <section class="media-container">
+            
+            <!-- Image Card -->
+            <article class="media-card">
+                <h2>My Image</h2>
+                <img src="umesh.jpg" alt="Photo of Umesh Kumar" height="360">
+            </article>
+
+            <!-- Video & Audio Card -->
+            <article class="media-card">
+                <h2>My Video</h2>
+                <video src="name.mp4" controls width="360"></video>
+                
+                <h2>My Audio</h2>
+                <audio src="appu.mp3" controls></audio>
+            </article>
+
+        </section>
+    </main>
+
 </body>
 </html>
