@@ -1,4 +1,4 @@
-/* General Reset */
+
 body, html {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
-/* Body Styling */
+
 body {
     background-color: #f4f4f9;
     color: #333;
@@ -16,7 +16,7 @@ body {
     min-height: 100vh;
 }
 
-/* Header Styling */
+
 header {
     display: flex;
     flex-direction: column;
@@ -28,7 +28,7 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Image Styling */
+
 header img {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -39,7 +39,7 @@ header img:hover {
     transform: scale(1.05);
 }
 
-/* Video Styling */
+
 header video {
     width: 100%;
     max-width: 600px;
